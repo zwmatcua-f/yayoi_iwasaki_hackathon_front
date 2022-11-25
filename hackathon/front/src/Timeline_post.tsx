@@ -5,6 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { useEffect, useState } from "react";
 import Fab from '@mui/material/Fab';
 import SendIcon from '@mui/icons-material/Send';
+import Button from '@mui/material/Button';
 import { useLocation } from "react-router-dom";
 
 interface State {
@@ -187,11 +188,11 @@ export default function BasicTextFields(props : Props) {
           
         </TextField>
         
-        <button type={"submit"} >
+        <Button type={"submit"} >
         <Fab color="primary" aria-label="add">
           <SendIcon />
         </Fab>
-        </button>
+        </Button>
 
     </Box>
   )

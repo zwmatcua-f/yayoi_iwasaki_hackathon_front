@@ -10,8 +10,8 @@ import Timeline_ranking from './Timeline_ranking';
 import selectedUser from "./App"
 import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
-import {User} from './Timeline';
-import {Contribution} from './Timeline';
+// import {User} from './Timeline';
+// import {Contribution} from './Timeline';
 import { useLocation } from "react-router-dom";
 
 interface State {
@@ -25,6 +25,19 @@ interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
   value: number;
+}
+
+export type Contribution = {
+  sender:string;
+  receiver:string;
+  message:string;
+  point:number;
+}
+
+export type User = {
+  id:string;
+  name:string;
+  age:number;
 }
 
 function TabPanel(props: TabPanelProps) {
@@ -65,8 +78,8 @@ export default function Timeline_tab() {
   const location = useLocation();
   const  {users}  = location.state as State;
   const  {contributions}  = location.state as State;
-  const {setContributions} = location.state as State;
   const {selectedUser} = location.state as State
+  
 
   return (
     <Box sx={{ width: '100%' }}>
@@ -84,17 +97,14 @@ export default function Timeline_tab() {
         </Button>
       </Box>
       <TabPanel value={value} index={0}>
-        <Timeline_sent contributions={contributions} users={users} setContributions={setContributions} selectedUser={selectedUser}/>
-        Sent
+        <Timeline_sent contributions={contributions} users={users} selectedUser={selectedUser}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Timeline_received contributions={contributions} users={users} setContributions={setContributions} selectedUser={selectedUser}/>
-        Received
+        <Timeline_received contributions={contributions} users={users} selectedUser={selectedUser}/>
       </TabPanel>
       <TabPanel value={value} index={2}>
         You got 
-        {/* <Timeline_ranking contributions={contributions} users={users} setContributions={setContributions} selectedUser={selectedUser}/> */}
-        pt!
+        <Timeline_ranking contributions={contributions} users={users} selectedUser={selectedUser}/>pt!
       </TabPanel>
     </Box>
   );

@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import Timeline from './Timeline';
 import Timeline_tab from './Timeline_tab';
+import Timeline_received from './Timeline_received';
 import reportWebVitals from './reportWebVitals';
 import {Route, BrowserRouter, Routes} from "react-router-dom";
 

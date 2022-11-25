@@ -35,7 +35,30 @@ export default function Timeline_contributions(props : Props) {
             <Avatar src="/broken-image.jpg" />
         </ListItemAvatar>
         <ListItemText
-          primary={contribution.sender}
+          primary={
+            <React.Fragment> 
+              <Typography
+                sx={{ display: 'inline' }}
+                component="span"
+                variant="body2"
+                fontSize={18}
+                color="text.primary"
+              >
+                {contribution.sender}
+              </Typography>
+              <br></br>
+              <Typography
+                sx={{ display: 'inline' }}
+                component="span"
+                variant="body2"
+                fontSize={18}
+                color="text.primary"
+                
+              >
+                {contribution.point}pt
+              </Typography> 
+            </React.Fragment>
+          }
           secondary={
             <React.Fragment> TO_
               <Typography

@@ -12,6 +12,7 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import Timeline_received from "./Timeline_received";
 
 interface State {
   selectedUser: User;
@@ -29,6 +30,7 @@ export type User = {
   name:string;
   age:number;
 }
+
 
 
 function Timeline() {
@@ -82,7 +84,6 @@ function Timeline() {
   },[]);
   
 
-
   return (
     <div className="App">
       <header className="App-header">
@@ -92,7 +93,7 @@ function Timeline() {
         </p> */}
         
         <Stack spacing={2} direction="row" >
-             <Button variant="outlined" component={Link} to="/views" state={{users:users, contributions:contributions,selectedUser:selectedUser,setContributions:setContributions}}
+             <Button variant="outlined" component={Link} to="/views" state={{users:users, contributions:contributions,selectedUser:selectedUser}}
              >Dashboard
              </Button>
              <Button variant="outlined" component={Link} to="/user_selection"
@@ -131,5 +132,6 @@ function Timeline() {
 }
 
 export default Timeline;
+
 
 
