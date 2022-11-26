@@ -41,7 +41,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>
-          UTTC大感謝祭
+          Dankon
         </p>
 
 
