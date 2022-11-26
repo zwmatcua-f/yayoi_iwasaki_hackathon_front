@@ -119,9 +119,6 @@ export default function BasicTextFields(props : Props) {
 
     //POSTここまで
 
-    //EDITここから
-
-    //DELETEここから
       
   return (
     <Box

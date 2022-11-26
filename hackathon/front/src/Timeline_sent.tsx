@@ -11,8 +11,10 @@ import Fab from '@mui/material/Fab';
 import EditIcon from '@mui/icons-material/Edit';
 import Button from '@mui/material/Button';
 import * as React from 'react';
+import Timeline_edit from './Timeline_edit';
 
 type Contribution = {
+  contribution_id:string;
   sender:string;
   receiver:string;
   message:string;
@@ -111,16 +113,7 @@ export default function Timeline_sent(props:Props) {
             
             {/* sentのタブでやる↓ */}
             
-            {/* <Button onClick={onEdit}> */}
-            <Fab size="small" color="secondary" aria-label="edit">
-              <EditIcon/>
-         　 </Fab>
-            {/* </Button> */}
-            <Button>
-            <Fab size="small" color="primary" aria-label="add">
-              <DeleteIcon />
-            </Fab>
-            </Button>
+            <Timeline_edit contribution={contribution}/>
           </ListItem>
           ))}
         </List>

@@ -28,6 +28,7 @@ interface TabPanelProps {
 }
 
 export type Contribution = {
+  contribution_id:string;
   sender:string;
   receiver:string;
   message:string;
