@@ -42,7 +42,7 @@ type Props = {
 
 export default function Timeline_edit(props:Props){
     
-        const onEdit = async (e:React.FormEvent<HTMLFormElement>) => {
+        const onEdit = async (e:any) => {
           e.preventDefault();
           // const [update, setUpdate] = useState<Update>();
           const new_message  = window.prompt("Enter new message.", "") as string; 
@@ -78,7 +78,7 @@ export default function Timeline_edit(props:Props){
     
 
 
-          const onDelete = async (e:React.FormEvent<HTMLFormElement>) => {
+          const onDelete = async (e:any) => {
             e.preventDefault();
             const delete_id=props.contribution.contribution_id
             try {
@@ -102,12 +102,12 @@ export default function Timeline_edit(props:Props){
 
     return (
         <Box>  
-          <Button  onClick={onEdit} >
+          <Button onClick={onEdit} >
             <Fab size="small" color="secondary" aria-label="edit">
               <EditIcon/>
          　 </Fab>
          </Button>
-          <Button  onClick={onDelete} >
+          <Button onClick={onDelete} >
             <Fab size="small" color="primary" aria-label="add">
               <DeleteIcon />
             </Fab>
